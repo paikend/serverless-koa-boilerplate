@@ -1,0 +1,45 @@
+service:
+  name: serverless-koa-boilerplate
+plugins:
+  - serverless-webpack
+  - serverless-dotenv-plugin
+custom:
+  dotenv:
+    path: .env
+    logging: false
+  serverless-offline:
+    port: 8001
+  webpack: # serverless-webpack 관련 설정
+    webpackConfig: 'webpack.config.js'
+    includeModules: true
+    packager: 'yarn' # npm을 사용한다면 npm으로 설정해주세요.
+provider:
+  name: aws
+  stage: dev
+  region: ap-northeast-2
+  runtime: nodejs12.x
+  versionFunctions: false
+  memorySize: 256
+  timeout: 30
+# layers:
+#   example: 
+#     path: example
+package:
+#  include:
+#    - include-me.js
+#    - include-me-dir/**
+  exclude:
+    - .practice/**
+    - .git/**
+    - __test__/**
+    - .gitignore
+    - README.md
+functions:
+  http:
+    handler: src/servers/prod.http
+    timeout: 3
+    cors:
+      - http://localhost:3000
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}         

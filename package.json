@@ -1,0 +1,60 @@
+{
+  "name": "serverless-koa-boilerplate",
+  "version": "1.0.0",
+  "description": "serverless-koa-boilerplate",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest && tsc",
+    "start": "nodemon --watch src --delay 1 --exec 'ts-node' src/servers/local.ts",
+    "deploy:dev": "sls deploy --stage dev",
+    "deploy:prod": "sls deploy --stage prod"
+  },
+  "dependencies": {
+    "koa": "^2.12.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "serverless-http": "^2.4.1",
+    "source-map-support": "^0.5.10"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.17",
+    "@types/faker": "^4.1.2",
+    "@types/jest": "^21.1.9",
+    "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-router": "^7.4.1",
+    "@types/node": "^10.12.18",
+    "@types/supertest": "^2.0.4",
+    "aws-lambda": "^1.0.6",
+    "aws-sdk": "^2.679.0",
+    "faker": "^4.1.0",
+    "jest": "^26.0.1",
+    "koa-cors": "^0.0.16",
+    "nodemon": "^2.0.4",
+    "serverless": "^1.26.0",
+    "serverless-dotenv-plugin": "^2.4.2",
+    "serverless-webpack": "^5.2.0",
+    "supertest": "^3.1.0",
+    "ts-jest": "^22.0.0",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.2.4",
+    "webpack": "^4.29.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": ".*\\.test.(ts|tsx|js)",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "license": "MIT"
+}
