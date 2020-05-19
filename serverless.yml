@@ -29,9 +29,8 @@ package:
 #    - include-me.js
 #    - include-me-dir/**
   exclude:
-    - .practice/**
     - .git/**
-    - __test__/**
+    - test/**
     - .gitignore
     - README.md
 functions:
