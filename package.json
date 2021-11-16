@@ -26,7 +26,7 @@
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.4",
     "aws-lambda": "^1.0.6",
-    "aws-sdk": "^2.679.0",
+    "aws-sdk": "^2.814.0",
     "faker": "^4.1.0",
     "jest": "^26.0.1",
     "koa-cors": "^0.0.16",
